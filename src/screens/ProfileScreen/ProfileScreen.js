@@ -3,14 +3,14 @@ import React, {Component} from 'react';
 import { AVATAR, COURSE, DONATION, ICON_BACK, TREE } from '../../assets/images';
 
 const windowWidth = Dimensions.get('window').width;
-export default class ProfileScreen extends Component {
-  render() {
+export default function ProfileScreen(props) {
+
     return (
         <SafeAreaView>
           {/* header */}
           <View style={styles.Container1}>
 
-            <TouchableOpacity style={styles.ButtonStyle}>
+            <TouchableOpacity style={styles.ButtonStyle} onPress={()=>props.navigation.goBack()}  >
               <Image source={ICON_BACK} style={styles.ImageStyle1}/>
             </TouchableOpacity>
 
@@ -55,31 +55,11 @@ export default class ProfileScreen extends Component {
             <Text style={styles.textButton}>Logout</Text>
           </TouchableOpacity>
 
-          <View style={styles.NavigateStyle}>
-            <TouchableOpacity style={styles.ContainerNavigate}>
-              <Image source={COURSE} style={styles.StyleImageCource}/>
-              <Text style={styles.StyleTextNavigate}>New</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.ContainerNavigate}>
-              <Image source={DONATION} style={styles.StyleImageCource}/>
-              <Text style={styles.StyleTextNavigate}>Donation</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.ContainerNavigate}>
-              <Image source={COURSE} style={styles.StyleImageCource}/>
-              <Text style={styles.StyleTextNavigate}>Gift</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.ContainerNavigate}>
-              <Image source={COURSE} style={styles.StyleImageCource}/>
-              <Text style={styles.StyleTextNavigate1}>Profile</Text>
-            </TouchableOpacity>
-          </View>
+         
 
         </SafeAreaView>
     );
-  }
+  
 }
 
 const styles =StyleSheet.create({

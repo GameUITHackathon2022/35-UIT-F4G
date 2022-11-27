@@ -3,14 +3,14 @@ import {SafeAreaView, View, Text, Image} from 'react-native';
 import styles from './style';
 //import { IMG_Illustration } from '../../assets/images';
 // import IntroScreen from '../IntroScreen/IntroScreen';
-const SplashScreen = () => {
-    // const [currentScreen, setCurrentScreen] = useState(true);
+const SplashScreen = ({navigation}) => {
+    const [currentScreen, setCurrentScreen] = useState(true);
 
-    // setTimeout(() => {
-    //     setCurrentScreen(false)
-    // }, 4000);
+    setTimeout(() => {
+        setCurrentScreen(false)
+    }, 4000);
 
-    // if(currentScreen)
+    if(currentScreen)
         return ( 
         <SafeAreaView style={{backgroundColor: 'white', height:'100%'}}>
             <View style={styles.container}>
@@ -32,5 +32,8 @@ const SplashScreen = () => {
             </View>
         </SafeAreaView>
         )
-};
+    else{
+            navigation.navigate('IntroScreen')};
+        };
+;
 export default SplashScreen;

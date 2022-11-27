@@ -5,3 +5,7 @@ export {default as Icon_Liked} from './liked.png';
 export {default as Icon_Comment} from './comment.png';
 export {default as Icon_Like} from './like.png';
 export {default as Icon_Share} from './share.png';
+export {default as IC_Donation} from './Donation.svg';
+export {default as IC_Gift} from './gift.svg';
+export {default as IC_Profile} from './Profile.svg';
+export {default as IC_New} from './new.svg';

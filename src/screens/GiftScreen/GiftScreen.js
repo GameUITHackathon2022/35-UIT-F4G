@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import { AVATAR, COURSE, DONATION, ICON_BACK, TREE } from '../../assets/images';
 
 const windowWidth = Dimensions.get('window').width;
-export default class ProfileScreen extends Component {
+export default class GiftScreen extends Component {
   render() {
     return (
         <SafeAreaView>
@@ -44,27 +44,7 @@ export default class ProfileScreen extends Component {
             <Text style={styles.textButton}>Logout</Text>
           </TouchableOpacity>
 
-          <View style={styles.NavigateStyle}>
-            <TouchableOpacity style={styles.ContainerNavigate}>
-              <Image source={COURSE} style={styles.StyleImageCource}/>
-              <Text style={styles.StyleTextNavigate}>New</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.ContainerNavigate}>
-              <Image source={DONATION} style={styles.StyleImageCource}/>
-              <Text style={styles.StyleTextNavigate}>Donation</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.ContainerNavigate}>
-              <Image source={COURSE} style={styles.StyleImageCource}/>
-              <Text style={styles.StyleTextNavigate}>Gift</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.ContainerNavigate}>
-              <Image source={COURSE} style={styles.StyleImageCource}/>
-              <Text style={styles.StyleTextNavigate1}>Profile</Text>
-            </TouchableOpacity>
-          </View>
+       
 
         </SafeAreaView>
     );

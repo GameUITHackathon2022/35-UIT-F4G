@@ -3,7 +3,7 @@ import React from 'react'
 import { Input } from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
 import styles from './style'
-const Login = () => {
+const DonationScreen = () => {
   return (
     <SafeAreaView>
         <View style={styles.headerOverlay}>
@@ -58,7 +58,7 @@ const Login = () => {
                 <Image style={styles.arrowDown} source={require('../../assets/icons/arrowDown.png')}></Image>
             </View>
         </View>
-        <></>
+       <ScrollView>
             <View style={styles.donateItem}>
                 <Image style={styles.donateImage} source={require('../../assets/images/plantdonate.png')}></Image>
                 <View style={{marginLeft: 20, marginRight: 20}}>
@@ -121,9 +121,9 @@ const Login = () => {
                     </View>
                 </View>
             </View>
-        <></>
+            </ScrollView>
     </SafeAreaView>
   )
 }
 
-export default Login
+export default DonationScreen

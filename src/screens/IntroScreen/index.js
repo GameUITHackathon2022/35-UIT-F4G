@@ -6,7 +6,7 @@ import slides from '../../datas/slides';
 import Paginator from './Paginator';
 import Button from '../../components/Button/NextButton';
 
-const IntroScreen = () => {
+const IntroScreen = ({navigation}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const scrollX = useRef(new Animated.Value(0)).current;
     const viewableItemsChanged = useRef(({viewableItems})=>{
@@ -22,11 +22,13 @@ const IntroScreen = () => {
     const scrollTo = () => {
         if(currentIndex < slides.length - 1){
             slidesRef.current.scrollToIndex({index: currentIndex + 1});
+            setCurrentIndex(currentIndex+1);
         }
     }
     const skipALl = () => {
         slidesRef.current.scrollToIndex({index: slides.length - 1});
-    }
+        navigation.navigate('Login')};
+    
 
     return (
         <SafeAreaView>
@@ -61,10 +63,18 @@ const IntroScreen = () => {
                 </View>
                 <Paginator data={slides} scrollX={scrollX}/>
                 <Button label={textButton()} 
-                        // scrollTo={
-                        //     (currentIndex===slides.length - 1) ?
-                        //         () => {navigation.navigate('Login')} : scrollTo
-                        // }
+                        scrollTo={
+                            (currentIndex===slides.length - 1) ?
+                                () => {navigation.navigate('Login')} : scrollTo
+                        }
+                        onPress={()=>{
+                            Animated.event([{nativeEvent: {contentOffset:{x:scrollX}}}], {
+                                useNativeDriver: false,
+                            })
+                            (currentIndex===slides.length - 1) ?
+                                () => {navigation.navigate('Login')} : scrollTo
+                                scrollX={scrollX}
+                        }} 
                 />
             </View>
         </SafeAreaView>

@@ -5,8 +5,12 @@ import React from 'react'
 import { Input } from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
 import styles from './style'
-const Login = () => {
-  return (
+import { useState,initialState } from 'react'
+const Login = props => {
+    const [email, setEmail] = useState(initialState);
+    const [password, setPassword] = useState(initialState);
+  
+return (
     <SafeAreaView>
         <View style={styles.container}>
             <View style={styles.imgContainer}>
@@ -26,15 +30,16 @@ const Login = () => {
                 </View>
             </View>
             <View style={styles.LoginInput}>
-                <Input label="Email" secureTextEntry={false}/>
+                <Input label="Email" secureTextEntry={false} onChangeText={newText => setMail(newText)}/>
                 <View style={{height: 16}}></View>
-                <Input label="Password" secureTextEntry={true}/>
+                <Input label="Password" secureTextEntry={true} onChangeText={newText => setPassword(newText)}/>
             </View>
-            <TouchableOpacity style={styles.textForgotPass}>
+            <TouchableOpacity style={styles.textForgotPass}  onPress={()=>props.navigation.navigate('SignUp')}>
                 <Text style={styles.textPassword}>Forgot Password?</Text>
             </TouchableOpacity>
-            <Button label="Log in" style={styles.buttonLogin}/>
-            <TouchableOpacity style={styles.textForgotPass}>
+            <Button label="Log in" style={styles.buttonLogin} 
+                onClicked={()=>props.navigation.navigate('News')}/>
+            <TouchableOpacity style={styles.textForgotPass}  onPress={()=>props.navigation.navigate('SignUp')}>
                 <Text style={styles.textSignup}>Sign up</Text>
             </TouchableOpacity>
         </View>

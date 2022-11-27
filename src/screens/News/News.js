@@ -26,7 +26,14 @@ export default class News extends Component {
             afterTime={'10 minutes'}
             Description={'Ho Chi Minh'}></Poster>
           <Poster
-            name={'Manh'}
+            name={'Ho'}
+            authImage={Icon_Auth}
+            style={styles.Post}
+            ImageSource={IMG_Post1}
+            afterTime={'10 minutes'}
+            Description={'Ho Chi Minh'}></Poster>
+             <Poster
+            name={'Dinh'}
             authImage={Icon_Auth}
             style={styles.Post}
             ImageSource={IMG_Post1}
